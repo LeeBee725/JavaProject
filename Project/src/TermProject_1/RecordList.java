@@ -12,8 +12,15 @@ public class RecordList {
 	}
 	
 	public void showRecord() {
+		int num = 0;
+		System.out.println("번호 내용");
 		for(Record record : linkedlist) {
-			System.out.println(record.getContents());
+			num++;
+			System.out.printf("%2d %s\n",num,record.getText());
 		}
+	}
+	
+	public String getLinkedListElement(int num) {
+		return linkedlist.get(num-1).getText();
 	}
 }

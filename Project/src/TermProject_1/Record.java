@@ -1,7 +1,9 @@
 package TermProject_1;
 
-public abstract class Record {
-	private String contents;
+import java.util.Scanner;
+
+public abstract class Record implements Recordable {
+	private String text;
 	private boolean complete;
 	
 	Record() {
@@ -9,15 +11,15 @@ public abstract class Record {
 	}
 	Record(String value) {
 		this();
-		setContents(value);
+		setText(value);
 	}
 	
-	public String getContents() {
-		return contents;
+	public String getText() {
+		return text;
 	}
 	
-	public void setContents(String value) {
-		contents = value;
+	public void setText(String value) {
+		text = value;
 	}
 	
 	public boolean isComplete() {
@@ -26,5 +28,25 @@ public abstract class Record {
 	
 	public void setComplete(boolean bool) {
 		complete = bool;
+	}
+
+	@Override
+	public void store() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void check() {
+		if(complete == true) {
+			complete = false;
+		} else { 
+			complete = true;
+		}
+	}
+	
+	@Override
+	public void revise() {
+
 	}
 }
